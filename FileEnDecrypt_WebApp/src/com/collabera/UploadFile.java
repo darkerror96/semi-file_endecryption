@@ -23,7 +23,7 @@ public class UploadFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private boolean isMultipart;
-	private String filePath = "/Users/rutpatel/Documents/Rut/Collabera_JuMP/AES_WebApp/Uploaded_Files/";
+	private String filePath = "/Uploaded_Files/";
 	private int maxFileSize = 10 * 1048576;
 	private int maxMemSize = 10 * 1048576;
 	private File file;
@@ -57,7 +57,7 @@ public class UploadFile extends HttpServlet {
 		factory.setSizeThreshold(maxMemSize);
 
 		// Location to save data that is larger than maxMemSize
-		factory.setRepository(new File("/Users/rutpatel/Documents/Rut/Collabera_JuMP/AES_WebApp/Temp/"));
+		factory.setRepository(new File("/Temp/"));
 
 		// Create a new file upload handler
 		ServletFileUpload upload = new ServletFileUpload(factory);
