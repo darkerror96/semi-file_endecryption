@@ -38,7 +38,7 @@ public class AES {
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 
 			File file = new File(
-					"/Users/rutpatel/Documents/Rut/Collabera_JuMP/Eclipse_Workspace/FileEnDecrypt_WebApp/WebContent/Files/Encrypt/EncryptedFile.txt");
+					"/FileEnDecrypt_WebApp/WebContent/Files/Encrypt/EncryptedFile.txt");
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write(Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8"))));
 			fileWriter.flush();
@@ -58,7 +58,7 @@ public class AES {
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
 
 			File file = new File(
-					"/Users/rutpatel/Documents/Rut/Collabera_JuMP/Eclipse_Workspace/FileEnDecrypt_WebApp/WebContent/Files/Decrypt/DecryptedFile.txt");
+					"/FileEnDecrypt_WebApp/WebContent/Files/Decrypt/DecryptedFile.txt");
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write(new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt))));
 			fileWriter.flush();
