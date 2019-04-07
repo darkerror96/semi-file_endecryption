@@ -41,8 +41,7 @@ public class AES {
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 
-			File file = new File(
-					"/Users/rutpatel/Documents/Rut/Collabera_JuMP/SpringTool_Workspace/FileEnDecrypt_WebApp/WebContent/Files/Encrypt/EncryptedFile.txt");
+			File file = new File("");
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write(Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8"))));
 			fileWriter.flush();
@@ -61,8 +60,7 @@ public class AES {
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
 
-			File file = new File(
-					"/Users/rutpatel/Documents/Rut/Collabera_JuMP/SpringTool_Workspace/FileEnDecrypt_WebApp/WebContent/Files/Decrypt/DecryptedFile.txt");
+			File file = new File("");
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write(new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt))));
 			fileWriter.flush();
